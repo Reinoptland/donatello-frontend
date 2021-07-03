@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch:sass": "npx sass --watch app/:dist/stylesheets"
+    "watch:sass": "npx sass --watch src/:dist/stylesheets"
   },
   "eslintConfig": {
     "extends": [
