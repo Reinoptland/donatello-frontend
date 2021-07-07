@@ -1,5 +1,11 @@
+import CallToAction from "./components/CallToAction";
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <CallToAction />
+    </div>
+  );
 }
 
 export default App;
