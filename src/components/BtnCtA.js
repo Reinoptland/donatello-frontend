@@ -1,10 +1,10 @@
 import React from "react";
 import "./BtnCta.css";
 
-const Button = () => {
+const Button = (props) => {
   return (
-    <button className="btn btn--cta btn--discover" type="button">
-      Discover Projects
+    <button className={`btn btn--cta btn--${props.variant}`} type="button">
+      {props.text}
     </button>
   );
 };

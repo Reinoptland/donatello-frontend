@@ -11,7 +11,11 @@
   font-family: "Roboto Mono", monospace;
 }
 
-.btn--discover {
+.btn--purple {
   background-color: #730ec3;
   color: white;
+}
+.btn--white {
+  background-color: white;
+  color: black;
 }

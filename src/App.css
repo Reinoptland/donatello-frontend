@@ -1,0 +1,9 @@
+/* * {
+  border: 1px solid red;
+} */
+
+.cta-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

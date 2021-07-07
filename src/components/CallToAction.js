@@ -1,23 +1,19 @@
 import React from "react";
 import "./CallToAction.css";
-import { FaHandHoldingHeart } from "react-icons/fa";
 import Button from "./BtnCtA";
 
-const CallToAction = () => {
-  const iconStyle = { color: "#730ec3", fontSize: "5em" };
+const CallToAction = (props) => {
   return (
-    <div className="main-cta-wrapper">
-      <span classname="icon icon--donate">
-        <FaHandHoldingHeart style={iconStyle} />
-      </span>
+    <div className={`main-cta-wrapper main-cta-wrapper--${props.background}`}>
+      <span classname="icon icon--donate">{props.icon}</span>
       <section className="text text--big">
-        <h1>Donate to work you support</h1>
+        <h1>{props.title}</h1>
       </section>
       <section className="text text--small">
-        <h4>Make your checkbook follow your heart</h4>
+        <h4>{props.description}</h4>
       </section>
       <span className="button">
-        <Button />
+        <Button variant={props.button} text={props.btnText} />
       </span>
     </div>
   );
