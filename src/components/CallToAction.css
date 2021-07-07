@@ -2,26 +2,30 @@
   border: 1px solid red;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+
 .main-cta-wrapper {
   background-color: #dfe6ed;
   color: #293845;
   display: flex;
-  /* justify-content: center; */
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   width: 360px;
   height: 440px;
-  padding-top: 10px;
+  padding: 10px;
+  font-family: "Roboto Mono", monospace;
 }
 
 .icon {
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .text {
-  margin: 25px 0;
+  text-align: center;
+  width: 240px;
 }
 
 .button {
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
