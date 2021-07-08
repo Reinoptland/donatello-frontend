@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+@import "../colors";
+@import "../spacing";
 
 .btn {
   height: 48px;
@@ -7,17 +8,17 @@
   border: none;
   border-radius: 6px;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 $medium;
   width: 240px;
   font-family: "Roboto Mono", monospace;
 
   &--purple {
-    background-color: #730ec3;
-    color: white;
+    background-color: $darkPurple;
+    color: $white;
   }
 
   &--white {
-    background-color: white;
-    color: black;
+    background-color: $white;
+    color: $black;
   }
 }

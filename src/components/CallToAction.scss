@@ -3,6 +3,8 @@
 } */
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+@import "../spacing";
+@import "../colors";
 
 .main-cta-wrapper {
   display: flex;
@@ -11,17 +13,16 @@
   flex-direction: column;
   width: 360px;
   height: 440px;
-  padding: 10px;
-  font-family: "Roboto Mono", monospace;
+  padding: $medium;
 
   &--white {
-    background-color: #dfe6ed;
-    color: #293845;
+    background-color: $darkGrey;
+    color: $black;
   }
 
   &--purple {
-    background-color: #b987e1;
-    color: white;
+    background-color: $lightPurple;
+    color: $white;
   }
 }
 
