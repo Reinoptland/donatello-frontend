@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import CallToAction from "./components/CallToAction";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { GiBiceps } from "react-icons/gi";

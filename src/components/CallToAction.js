@@ -1,5 +1,5 @@
 import React from "react";
-import "./CallToAction.css";
+import "./CallToAction.scss";
 import Button from "./BtnCtA";
 
 const CallToAction = (props) => {
