@@ -1,0 +1,31 @@
+/* * {
+  border: 1px solid red;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+
+.main-cta-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 360px;
+  height: 440px;
+  padding: 10px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.text {
+  text-align: center;
+  width: 240px;
+}
+
+.main-cta-wrapper--white {
+  background-color: #dfe6ed;
+  color: #293845;
+}
+
+.main-cta-wrapper--purple {
+  background-color: #b987e1;
+  color: white;
+}
