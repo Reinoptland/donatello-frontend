@@ -13,19 +13,19 @@
   height: 440px;
   padding: 10px;
   font-family: "Roboto Mono", monospace;
+
+  &--white {
+    background-color: #dfe6ed;
+    color: #293845;
+  }
+
+  &--purple {
+    background-color: #b987e1;
+    color: white;
+  }
 }
 
 .text {
   text-align: center;
   width: 240px;
-}
-
-.main-cta-wrapper--white {
-  background-color: #dfe6ed;
-  color: #293845;
-}
-
-.main-cta-wrapper--purple {
-  background-color: #b987e1;
-  color: white;
 }

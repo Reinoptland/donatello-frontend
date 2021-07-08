@@ -10,13 +10,14 @@
   padding: 0 10px;
   width: 240px;
   font-family: "Roboto Mono", monospace;
-}
 
-.btn--purple {
-  background-color: #730ec3;
-  color: white;
-}
-.btn--white {
-  background-color: white;
-  color: black;
+  &--purple {
+    background-color: #730ec3;
+    color: white;
+  }
+
+  &--white {
+    background-color: white;
+    color: black;
+  }
 }
