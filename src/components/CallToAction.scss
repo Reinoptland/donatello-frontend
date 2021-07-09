@@ -1,0 +1,32 @@
+/* * {
+  border: 1px solid red;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+@import "../spacing";
+@import "../colors";
+
+.main-cta-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 360px;
+  height: 440px;
+  padding: $medium;
+
+  &--white {
+    background-color: $darkGrey;
+    color: $black;
+  }
+
+  &--purple {
+    background-color: $lightPurple;
+    color: $white;
+  }
+}
+
+.text {
+  text-align: center;
+  width: 240px;
+}

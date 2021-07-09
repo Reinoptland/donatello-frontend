@@ -1,0 +1,24 @@
+@import "../colors";
+@import "../spacing";
+
+.btn {
+  height: 48px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  justify-content: center;
+  padding: 0 $medium;
+  width: 240px;
+  font-family: "Roboto Mono", monospace;
+
+  &--purple {
+    background-color: $darkPurple;
+    color: $white;
+  }
+
+  &--white {
+    background-color: $white;
+    color: $black;
+  }
+}
