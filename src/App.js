@@ -9,6 +9,20 @@ function App() {
   return (
     <>
         <Nav/>
+        <Switch>
+            <Route path='/discover'>
+
+            </Route>
+
+            <Route path='/start-project'>
+
+            </Route>
+
+            <Route path='/login'>
+
+            </Route>
+
+        </Switch>
 
 
 

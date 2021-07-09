@@ -1,0 +1,33 @@
+@import "../colors";
+
+.navbar {
+  background-color: $lightGrey;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 5rem;
+
+}
+
+.nav__logo {
+  display: flex;
+  color: $darkPurple;
+  align-items: center;
+
+  &--icon {
+    margin-right: 2rem;
+  }
+}
+
+.nav__links {
+ list-style: none;
+  display: flex;
+}
+
+.nav__item {
+  display: inline-block;
+  padding: 0 30px;
+  text-decoration: none;
+  color: $darkPurple;
+  margin: 1.5rem;
+}
