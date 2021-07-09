@@ -2,10 +2,19 @@ import "./App.scss";
 import CallToAction from "./components/CallToAction";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { GiBiceps } from "react-icons/gi";
+import Nav from "./components/Nav";
+import {Switch, Route} from "react-router-dom";
 
 function App() {
   return (
     <>
+        <Nav/>
+
+
+
+
+
+
       <div className="cta-wrapper">
         <aside className="cta cta--donate">
           <CallToAction
