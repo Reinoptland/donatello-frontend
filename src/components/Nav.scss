@@ -1,0 +1,33 @@
+@import "../colors";
+@import "../spacing";
+
+.navbar {
+  background-color: $lightGrey;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 5rem;
+}
+
+.navbar__logo {
+  display: flex;
+  color: $darkPurple;
+  align-items: center;
+
+  &--icon {
+    margin-right: $xl;
+  }
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar__item {
+  display: inline-block;
+  padding: 0 $xl;
+  text-decoration: none;
+  color: $darkPurple;
+  margin: $large;
+}
