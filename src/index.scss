@@ -9,9 +9,31 @@
 
 body {
   font-family: "Roboto Mono", monospace;
-  background-color: $lightGrey;
+  background-color: $white;
+  letter-spacing: 0.1rem;
 }
 
-// Add more defaults
+html {
+  font-size: 16px;
+}
 
-// Add responsive info, root fontsize etc ...
+h1 {
+  font-size: 1.7rem;
+}
+
+h2, h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+input {
+  font-style: italic;
+}
+
