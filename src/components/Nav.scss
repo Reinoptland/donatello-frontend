@@ -1,4 +1,5 @@
 @import "../colors";
+@import "../spacing";
 
 .navbar {
   background-color: $lightGrey;
@@ -9,25 +10,25 @@
 
 }
 
-.nav__logo {
+.navbar__logo {
   display: flex;
   color: $darkPurple;
   align-items: center;
 
   &--icon {
-    margin-right: 2rem;
+    margin-right: $xl;
   }
 }
 
-.nav__links {
+.navbar__links {
  list-style: none;
   display: flex;
 }
 
-.nav__item {
+.navbar__item {
   display: inline-block;
-  padding: 0 30px;
+  padding: 0 $xl;
   text-decoration: none;
   color: $darkPurple;
-  margin: 1.5rem;
+  margin: $large;
 }

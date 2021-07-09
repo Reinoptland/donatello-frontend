@@ -22,6 +22,37 @@ function App() {
 
             </Route>
 
+            <Route path='/'>
+
+                <div className="cta-wrapper">
+                    <aside className="cta cta--donate">
+                        <CallToAction
+                            icon={
+                                <FaHandHoldingHeart
+                                    style={{ color: "#730ec3", fontSize: "5em" }}
+                                />
+                            }
+                            background="white"
+                            title="Donate to work you support"
+                            description="Make your checkbook follow your heart"
+                            button="purple"
+                            btnText="Discover Projects"
+                        />
+                    </aside>
+                    <aside className="cta cta--project">
+                        <CallToAction
+                            background="purple"
+                            icon={<GiBiceps style={{ color: "white", fontSize: "5em" }} />}
+                            title="Change is in your hands"
+                            description="Start a project that changes the world"
+                            button="white"
+                            btnText="Start a project"
+                        />
+                    </aside>
+                </div>
+
+            </Route>
+
         </Switch>
 
 
@@ -29,32 +60,7 @@ function App() {
 
 
 
-      <div className="cta-wrapper">
-        <aside className="cta cta--donate">
-          <CallToAction
-            icon={
-              <FaHandHoldingHeart
-                style={{ color: "#730ec3", fontSize: "5em" }}
-              />
-            }
-            background="white"
-            title="Donate to work you support"
-            description="Make your checkbook follow your heart"
-            button="purple"
-            btnText="Discover Projects"
-          />
-        </aside>
-        <aside className="cta cta--project">
-          <CallToAction
-            background="purple"
-            icon={<GiBiceps style={{ color: "white", fontSize: "5em" }} />}
-            title="Change is in your hands"
-            description="Start a project that changes the world"
-            button="white"
-            btnText="Start a project"
-          />
-        </aside>
-      </div>
+
     </>
   );
 }
