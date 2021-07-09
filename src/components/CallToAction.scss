@@ -16,16 +16,11 @@
   padding: $medium;
 
   &--white {
-    background-color: $darkGrey;
+    background-color: $lightGrey;
     color: $black;
   }
 
   &--purple {
-    background-color: $lightPurple;
-    color: $white;
-  }
-
-  &--lightPurple {
     background-color: $lightPurple;
     color: $white;
   }

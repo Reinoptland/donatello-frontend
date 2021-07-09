@@ -25,7 +25,7 @@ const SuccessPage = () => {
   return (
     <aside className="cta cta--project">
       <CallToAction
-        background="lightPurple"
+        background="purple"
         icon={<FaHandsHelping style={{ color: "white", fontSize: "5em" }} />}
         title={`Thank you for supporting ${payment.project?.user?.firstName}'s project:`}
         description={payment.project?.projectName}
