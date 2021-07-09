@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../succesPage/Success.scss";
 import CallToAction from "../../components/CallToAction";
-import { GiShakingHands } from "react-icons/gi";
+import { FaHandsHelping } from "react-icons/fa";
 import axios from "axios";
 
 const SuccessPage = () => {
@@ -26,7 +26,7 @@ const SuccessPage = () => {
     <aside className="cta cta--project">
       <CallToAction
         background="lightPurple"
-        icon={<GiShakingHands style={{ color: "white", fontSize: "5em" }} />}
+        icon={<FaHandsHelping style={{ color: "white", fontSize: "5em" }} />}
         title={`Thank you for supporting ${payment.project?.user?.firstName}'s project:`}
         description={payment.project?.projectName}
         button="white"
