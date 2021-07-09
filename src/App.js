@@ -2,6 +2,7 @@ import "./App.scss";
 import CallToAction from "./components/CallToAction";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { GiBiceps } from "react-icons/gi";
+import { GiShakingHands } from "react-icons/gi";
 
 function App() {
   return (
@@ -29,6 +30,18 @@ function App() {
             description="Start a project that changes the world"
             button="white"
             btnText="Start a project"
+          />
+        </aside>
+        <aside className="cta cta--project">
+          <CallToAction
+            background="lightPurple"
+            icon={
+              <GiShakingHands style={{ color: "white", fontSize: "5em" }} />
+            }
+            title="Thank you for supporting Arnoud's project:"
+            description="Sociaal Oosterhout Platform"
+            button="white"
+            btnText="View other projects"
           />
         </aside>
       </div>
