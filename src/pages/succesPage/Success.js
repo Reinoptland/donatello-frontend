@@ -13,7 +13,6 @@ const SuccessPage = () => {
         const response = await axios.get(
           `https://donatello-development.herokuapp.com/projects/bf35aad5-1736-4934-b018-5d2bd0c88c63/donations/14212a4f-ccce-45e6-8bbd-6bc220bece69`
         );
-        // console.log("Response", response);
         setPayment(response.data.donation);
       } catch (error) {
         console.error(error);
