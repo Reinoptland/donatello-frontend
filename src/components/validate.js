@@ -27,7 +27,9 @@ export default function validate(values) {
         errors.iban = 'iBan is invalid, please check again'
     }
 
+// iBan validation is not workin yet
+///^[A-Z]{2}[0-9A-Z]*$/
 
     return errors;
 }
-// /^[A-Z]{2}[0-9A-Z]*$/
+

@@ -8,12 +8,14 @@ import validate from './validate'
 const Signup = () => {
     const {handleChange, values, handleSubmit, errors} = FormHook(validate);
 
+
     return (
-        <div className='form__content-right'>
+        <div className='form__container'>
+        <div className='form__container-right'>
             <form className="form"
                     onSubmit={handleSubmit}
             >
-                <h1>Let's change the world!</h1>
+                <h4 className="form__title">Let's change the world!</h4>
 
                 <div className="form__input">
                     <label
@@ -105,11 +107,12 @@ const Signup = () => {
                 <button type="submit" className="form__input--btn">
                     Sign up
                 </button>
-                <span className="form__input--login">
+                <div className="form__input--login">
                    Already have an account? <a href="#">here</a>
-               </span>
+               </div>
 
             </form>
+        </div>
         </div>
     );
 }

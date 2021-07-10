@@ -1,6 +1,36 @@
 @import "../colors";
 @import "../spacing";
 
-h1 {
+.form__title {
   color: $darkPurple;
+  padding: $small;
+  margin: 0.1rem;
+}
+
+.form {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  background-color: $lightGrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding:$medium;
+  width: 360px;
+
+}
+
+.form__input {
+  margin: 0.1rem;
+  padding: $small;
+
+  &--btn {
+    padding: $small;
+    margin: 0.1rem;
+  }
+
+  &--login {
+    font-size: 0.7rem;
+    padding: $small;
+    margin: 0.1rem;
+  }
 }
