@@ -1,6 +1,9 @@
 import {useState} from "react";
+import validate from "./validate";
 
-const FormHook = () => {
+//custom hook to get values from input field sign up
+
+const FormHook = (validate) => {
     const [values, setValues] = useState({
         email:'',
         password:'',
@@ -20,8 +23,10 @@ const FormHook = () => {
         }
     const handleSubmit = e => {
         e.preventDefault();
+
+        setErrors(validate(values))
     }
-    return {handleChange, values, handleSubmit}
+    return {handleChange, values, handleSubmit, errors}
 }
 
 export default FormHook;

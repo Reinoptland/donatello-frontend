@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import "./Signup.scss"
-import FormHook from "../FormHook";
+import FormHook from "./FormHook";
+import validate from './validate'
+
 
 
 const Signup = () => {
-    const {handleChange, values, handleSubmit} = FormHook();
+    const {handleChange, values, handleSubmit, errors} = FormHook(validate);
 
     return (
         <div className='form__content-right'>
@@ -12,7 +14,8 @@ const Signup = () => {
                     onSubmit={handleSubmit}
             >
                 <h1>Let's change the world!</h1>
-                <div className="form__inputs">
+
+                <div className="form__input">
                     <label
                         className="form__input--label"
                         htmlFor="email"
@@ -26,7 +29,11 @@ const Signup = () => {
                             placeholder="Email"
                         />
                     </label>
-                    <div className="form__inputs">
+                    {errors.email && <p>{errors.email}</p>}
+                </div>
+
+
+                    <div className="form__input">
                         <label
                             className="form__input--label"
                             htmlFor="password"
@@ -40,8 +47,10 @@ const Signup = () => {
                                 placeholder="Password"
                             />
                         </label>
+                        {errors.password && <p>{errors.password}</p>}
                     </div>
-                    <div className="form__inputs">
+
+                    <div className="form__input">
                         <label
                             className="form__input--label"
                             htmlFor="firstname"
@@ -55,9 +64,10 @@ const Signup = () => {
                                 placeholder="First name"
                             />
                         </label>
+                        {errors.firstname && <p>{errors.firstname}</p>}
                     </div>
 
-                    <div className="form__inputs">
+                    <div className="form__input">
                         <label
                             className="form__input--label"
                             htmlFor="lastname"
@@ -71,9 +81,10 @@ const Signup = () => {
                                 placeholder="Last name"
                             />
                         </label>
+                        {errors.lastname && <p>{errors.lastname}</p>}
                     </div>
 
-                    <div className="form__inputs">
+                    <div className="form__input">
                         <label
                             className="form__input--label"
                             htmlFor="iban"
@@ -87,8 +98,9 @@ const Signup = () => {
                                 placeholder="iBan"
                             />
                         </label>
+                        {errors.iban && <p>{errors.iban}</p>}
                     </div>
-                </div>
+
 
                 <button type="submit" className="form__input--btn">
                     Sign up
