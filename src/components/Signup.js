@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import "./Signup.scss"
 import FormHook from "./FormHook";
 import validate from './validate'
-
+import Button from "./BtnCtA";
 
 
 const Signup = () => {
@@ -11,33 +11,33 @@ const Signup = () => {
 
     return (
         <div className='form__container'>
-        <div className='form__container-right'>
-            <form className="form"
-                    onSubmit={handleSubmit}
-            >
-                <h4 className="form__title">Let's change the world!</h4>
+            <div className='form__container-right'>
+                <form className="form"
+                      onSubmit={handleSubmit}
+                >
+                    <h4 className="form__title">Let's change the world!</h4>
 
-                <div className="form__input">
-                    <label
-                        className="form__input--label"
-                        htmlFor="email"
-                    >
-                        <input
-                            value={values.email}
-                            onChange={handleChange}
-                            type="email"
-                            name="email"
-                            className="form__input"
-                            placeholder="Email"
-                        />
-                    </label>
-                    {errors.email && <p>{errors.email}</p>}
-                </div>
-
-
-                    <div className="form__input">
+                    <div className="form__input-group">
                         <label
-                            className="form__input--label"
+                            className="form__label"
+                            htmlFor="email"
+                        >
+                            <input
+                                value={values.email}
+                                onChange={handleChange}
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                className="form__input"
+                            />
+                        </label>
+                        {errors.email && <p>{errors.email}</p>}
+                    </div>
+
+
+                    <div className="form__input-group">
+                        <label
+                            className="form__label"
                             htmlFor="password"
                         >
                             <input
@@ -52,67 +52,66 @@ const Signup = () => {
                         {errors.password && <p>{errors.password}</p>}
                     </div>
 
-                    <div className="form__input">
+                    <div className="form__input-group">
                         <label
-                            className="form__input--label"
-                            htmlFor="firstname"
+                            className="form__label"
+                            htmlFor="firstName"
                         >
                             <input
-                                value={values.firstname}
+                                value={values.firstName}
                                 onChange={handleChange}
                                 type="text"
-                                name="firstname"
+                                name="firstName"
                                 className="form__input"
                                 placeholder="First name"
                             />
                         </label>
-                        {errors.firstname && <p>{errors.firstname}</p>}
+                        {errors.firstName && <p>{errors.firstName}</p>}
                     </div>
 
-                    <div className="form__input">
+                    <div className="form__input-group">
                         <label
-                            className="form__input--label"
-                            htmlFor="lastname"
+                            className="form__label"
+                            htmlFor="lastName"
                         >
                             <input
-                                value={values.lastname}
+                                value={values.lastName}
                                 onChange={handleChange}
                                 type="text"
-                                name="lastname"
+                                name="lastName"
                                 className="form__input"
                                 placeholder="Last name"
                             />
                         </label>
-                        {errors.lastname && <p>{errors.lastname}</p>}
+                        {errors.lastName && <p>{errors.lastName}</p>}
                     </div>
 
-                    <div className="form__input">
+                    <div className="form__input-group">
                         <label
-                            className="form__input--label"
-                            htmlFor="iban"
+                            className="form__label"
+                            htmlFor="iBan"
                         >
                             <input
                                 value={values.iban}
                                 onChange={handleChange}
                                 type="text"
-                                name="iban"
+                                name="iBan"
                                 className="form__input"
                                 placeholder="iBan"
                             />
                         </label>
-                        {errors.iban && <p>{errors.iban}</p>}
+                        {errors.iBan && <p>{errors.iBan}</p>}
                     </div>
 
 
-                <button type="submit" className="form__input--btn">
-                    Sign up
-                </button>
-                <div className="form__input--login">
-                   Already have an account? <a href="#">here</a>
-               </div>
+                    <Button type="submit" text="Sign up" size="medium" variant="purple"/>
 
-            </form>
-        </div>
+                    <p className="form__message"> Already have an account?<a className="login__link" href="#">here</a>
+                    </p>
+
+
+                </form>
+            </div>
         </div>
     );
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import "./BtnCta.scss";
 
-const Button = ({ variant, text }) => {
+const Button = ({ variant, text, size, type="button" }) => {
   return (
-    <button className={`btn btn--cta btn--${variant}`} type="button">
+    <button className={`btn btn--${variant} btn--${size}`} type={type}>
       {text}
     </button>
   );

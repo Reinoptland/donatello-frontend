@@ -13,7 +13,7 @@ const CallToAction = (props) => {
         <h4>{props.description}</h4>
       </section>
       <span className="button">
-        <Button variant={props.button} text={props.btnText} />
+        <Button variant={props.button} size="large" text={props.btnText} />
       </span>
     </div>
   );

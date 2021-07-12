@@ -2,7 +2,7 @@ import "./App.scss";
 import CallToAction from "./components/CallToAction";
 import {FaHandHoldingHeart} from "react-icons/fa";
 import {GiBiceps} from "react-icons/gi";
-import SuccessPage from "./Pages/succesPage/Success";
+import SuccessPage from "./pages/succesPage/Success";
 import Nav from "./components/Nav";
 import {Switch, Route} from "react-router-dom";
 import Signup from "./components/Signup";

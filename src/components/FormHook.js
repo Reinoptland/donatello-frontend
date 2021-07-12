@@ -7,9 +7,9 @@ const FormHook = (validate) => {
     const [values, setValues] = useState({
         email:'',
         password:'',
-        firstname:'',
-        lastname:'',
-        iban:''
+        firstName:'',
+        lastName:'',
+        iBan:''
     });
     const [errors, setErrors] = useState({});
 
@@ -23,6 +23,7 @@ const FormHook = (validate) => {
     const handleSubmit = e => {
         e.preventDefault();
         setErrors(validate(values))
+        console.log(values)
 
 
     }
