@@ -15,7 +15,7 @@ const Signup = () => {
                 <form className="form"
                       onSubmit={handleSubmit}
                 >
-                    <h4 className="form__title">Let's change the world!</h4>
+                    <div className="form__title">Let's change the world!</div>
 
                     <div className="form__input-group">
                         <label
