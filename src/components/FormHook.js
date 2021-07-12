@@ -22,8 +22,18 @@ const FormHook = (validate) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        setErrors(validate(values))
-        console.log(values)
+        const formErrors = validate(values)
+        console.log("errors?", formErrors)
+        console.log("leeg?", Object.keys(formErrors).length === 0)
+
+    if(
+        Object.keys(formErrors).length === 0
+    ){
+        console.log("send data here")
+        setErrors({})
+    } else {
+        setErrors(formErrors)
+    }
 
 
     }

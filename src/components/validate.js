@@ -1,7 +1,6 @@
 //validation info for sign up form
 
 export default function validate(values) {
-    console.log(values)
     let errors = {};
 
 

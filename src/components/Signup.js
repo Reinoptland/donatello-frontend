@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./Signup.scss"
 import FormHook from "./FormHook";
 import validate from './validate'
