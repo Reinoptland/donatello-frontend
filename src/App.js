@@ -6,6 +6,7 @@ import SuccessPage from "./pages/succesPage/Success";
 import Nav from "./components/Nav";
 import {Switch, Route} from "react-router-dom";
 import Signup from "./components/Signup";
+import LoginForm from "./components/LoginForm";
 
 function App() {
     return (
@@ -21,6 +22,10 @@ function App() {
                 </Route>
 
                 <Route path="/login">
+                    <LoginForm/>
+                </Route>
+
+                <Route path="/signup">
                     <Signup/>
                 </Route>
 

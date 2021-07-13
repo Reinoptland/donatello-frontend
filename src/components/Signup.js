@@ -27,7 +27,8 @@ const Signup = () => {
         }
         const result = await axios.post("https://donatello-development.herokuapp.com/users", body)
         const data = result.data;
-        console.log(data);
+        console.log(data)
+
     }
 
     return (
@@ -85,7 +86,8 @@ const Signup = () => {
 
                     <Button type="submit" text="Sign up" size="medium" variant="purple"/>
 
-                    <p className="form__message"> Already have an account?<a className="login__link" href="#">here</a>
+                    <p className="form__message"> Already have an account?
+                        <a className="login__link" href="/login">Log in!</a>
                     </p>
 
 
