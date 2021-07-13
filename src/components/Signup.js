@@ -3,11 +3,32 @@ import "./Signup.scss"
 import FormHook from "./FormHook";
 import validate from './validate'
 import Button from "./BtnCtA";
-
+import axios from 'axios'
+import TextInput from "./TextInput";
 
 const Signup = () => {
-    const {handleChange, values, handleSubmit, errors} = FormHook(validate);
+    const {handleChange, values, handleSubmit, errors} = FormHook(validate, {
+        email: '',
+        password: '',
+        firstName: '',
+        lastName: '',
+        iBan: ''
+    }, getNewUser)
 
+
+    async function getNewUser(values) {
+
+        const body = {
+            email: values.email,
+            password: values.password,
+            firstName: values.firstName,
+            lastName: values.lastName,
+            iBan: values.iBan
+        }
+        const result = await axios.post("https://donatello-development.herokuapp.com/users", body)
+        const data = result.data;
+        console.log(data);
+    }
 
     return (
         <div className='form__container'>
@@ -17,92 +38,50 @@ const Signup = () => {
                 >
                     <div className="form__title">Let's change the world!</div>
 
-                    <div className="form__input-group">
-                        <label
-                            className="form__label"
-                            htmlFor="email"
-                        >
-                            <input
-                                value={values.email}
-                                onChange={handleChange}
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                className="form__input"
-                            />
-                        </label>
-                        {errors.email && <p>{errors.email}</p>}
-                    </div>
+                    <TextInput
+                        name="email"
+                        values={values}
+                        handleChange={handleChange}
+                        type="email"
+                        placeholder="Email"
+                        errors={errors}
+                    />
 
+                    <TextInput
+                        name="password"
+                        values={values}
+                        handleChange={handleChange}
+                        type="password"
+                        placeholder="Password"
+                        errors={errors}
+                    />
 
-                    <div className="form__input-group">
-                        <label
-                            className="form__label"
-                            htmlFor="password"
-                        >
-                            <input
-                                value={values.password}
-                                onChange={handleChange}
-                                type="password"
-                                name="password"
-                                className="form__input"
-                                placeholder="Password"
-                            />
-                        </label>
-                        {errors.password && <p>{errors.password}</p>}
-                    </div>
+                    <TextInput
+                        name="firstName"
+                        values={values}
+                        handleChange={handleChange}
+                        type="text"
+                        placeholder="Firstname"
+                        errors={errors}
+                    />
 
-                    <div className="form__input-group">
-                        <label
-                            className="form__label"
-                            htmlFor="firstName"
-                        >
-                            <input
-                                value={values.firstName}
-                                onChange={handleChange}
-                                type="text"
-                                name="firstName"
-                                className="form__input"
-                                placeholder="First name"
-                            />
-                        </label>
-                        {errors.firstName && <p>{errors.firstName}</p>}
-                    </div>
+                    <TextInput
+                        name="lastName"
+                        values={values}
+                        handleChange={handleChange}
+                        type="text"
+                        placeholder="Lastname"
+                        errors={errors}
+                    />
 
-                    <div className="form__input-group">
-                        <label
-                            className="form__label"
-                            htmlFor="lastName"
-                        >
-                            <input
-                                value={values.lastName}
-                                onChange={handleChange}
-                                type="text"
-                                name="lastName"
-                                className="form__input"
-                                placeholder="Last name"
-                            />
-                        </label>
-                        {errors.lastName && <p>{errors.lastName}</p>}
-                    </div>
-
-                    <div className="form__input-group">
-                        <label
-                            className="form__label"
-                            htmlFor="iBan"
-                        >
-                            <input
-                                value={values.iban}
-                                onChange={handleChange}
-                                type="text"
-                                name="iBan"
-                                className="form__input"
-                                placeholder="iBan"
-                            />
-                        </label>
-                        {errors.iBan && <p>{errors.iBan}</p>}
-                    </div>
-
+                    <TextInput
+                        name="iBan"
+                        values={values}
+                        handleChange={handleChange}
+                        type="text"
+                        placeholder="iBan"
+                        errors={errors}
+                    />
 
                     <Button type="submit" text="Sign up" size="medium" variant="purple"/>
 
