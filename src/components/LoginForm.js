@@ -45,7 +45,7 @@ const LoginForm = () => {
                     errors={errors}
                 />
 
-                <Button type="submit" text="Sign up" size="medium" variant="purple"/>
+                <Button type="submit" text="Login" size="medium" variant="purple"/>
 
                 <p className="form__message"> Don't have account?
                     <a className="login__link" href="/signup"> Sign up!</a>
