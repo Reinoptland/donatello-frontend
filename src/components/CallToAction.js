@@ -5,7 +5,7 @@ import Button from "./BtnCtA";
 const CallToAction = (props) => {
   return (
     <div className={`main-cta-wrapper main-cta-wrapper--${props.background}`}>
-      <span classname="icon icon--donate">{props.icon}</span>
+      <span className="icon icon--donate">{props.icon}</span>
       <section className="text text--big">
         <h1>{props.title}</h1>
       </section>
@@ -13,7 +13,7 @@ const CallToAction = (props) => {
         <h4>{props.description}</h4>
       </section>
       <span className="button">
-        <Button variant={props.button} text={props.btnText} />
+        <Button variant={props.button} size="large" text={props.btnText} />
       </span>
     </div>
   );

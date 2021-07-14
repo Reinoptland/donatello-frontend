@@ -5,12 +5,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  //border: 1px solid red;
 }
 
 body {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Helvetica", monospace;
   background-color: $white;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
 }
 
 html {
@@ -31,9 +32,6 @@ h4 {
 }
 
 p {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   letter-spacing: 0.1rem;
-}
-input {
-  font-style: italic;
 }
