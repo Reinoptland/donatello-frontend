@@ -22,7 +22,6 @@ describe("Login page functionality", () => {
     cy.wait("@apiCall").then((interception) => {
       expect(interception.request.body.email).to.include("rein@rein.com");
       expect(interception.request.body.password).to.include("abcd1234");
-      return interception;
     });
     /* eslint-enable */
   });
