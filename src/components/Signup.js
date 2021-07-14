@@ -1,13 +1,13 @@
 import React from 'react';
 import "./Signup.scss"
 import FormHook from "./FormHook";
-import validate from './validate'
+import {validateSignup} from './validate'
 import Button from "./BtnCtA";
 import axios from 'axios'
 import TextInput from "./TextInput";
 
 const Signup = () => {
-    const {handleChange, values, handleSubmit, errors} = FormHook(validate, {
+    const {handleChange, values, handleSubmit, errors} = FormHook(validateSignup, {
         email: '',
         password: '',
         firstName: '',
