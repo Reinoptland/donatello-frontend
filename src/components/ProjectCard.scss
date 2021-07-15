@@ -34,6 +34,7 @@
     }
     &--black {
       color: $black;
+      margin: $medium 0;
     }
   }
   &__tags {
@@ -53,6 +54,12 @@
   }
 
   &__btn {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__footer {
     display: flex;
     justify-content: space-between;
     flex-direction: row;

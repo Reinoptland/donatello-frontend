@@ -3,6 +3,8 @@ import "./ProjectCard.scss";
 import Button from "./BtnCtA";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
+import { GiPiggyBank } from "react-icons/gi";
+import { FaRegCalendarCheck } from "react-icons/fa";
 
 const ProjectCard = (props) => {
   return (
@@ -26,8 +28,8 @@ const ProjectCard = (props) => {
           </div>
         </div>
         <p className="project-card__text project-card__text--black">
-          description project blablblalalalalalalalala blalalaa blalala blalala
-          blalalablalaalblal
+          description project blablbla lalalala lalalala blalalaa blalala
+          blalala blalal ablalaal blal
         </p>
         <div className="project-card__btn">
           <Button
@@ -50,7 +52,17 @@ const ProjectCard = (props) => {
           />
         </div>
       </div>
-      <div className="project-card__footer">footer</div>
+      <div className="project-card__footer">
+        <div>
+          <GiPiggyBank style={{ color: "#751cc1", fontSize: "2em" }} />
+        </div>
+        <div>
+          <FaRegCalendarCheck style={{ color: "#751cc1", fontSize: "2em" }} />
+        </div>
+        <div>
+          <FaHandHoldingHeart style={{ color: "#751cc1", fontSize: "2em" }} />
+        </div>
+      </div>
     </div>
   );
 };
