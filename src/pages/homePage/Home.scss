@@ -1,3 +1,22 @@
 // * {
 //   border: 2px solid red;
 // }
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+@import "../../colors";
+@import "../../spacing";
+
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__header {
+    margin-bottom: $xl;
+  }
+  &__main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
