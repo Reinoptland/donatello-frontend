@@ -43,6 +43,18 @@ const Home = () => {
             by="by: Arty McArtis"
           />
         </div>
+        <div>
+          <ProjectCard
+            titleHeader="Cool animation project"
+            by="by: Arty McArtis"
+          />
+        </div>
+        <div>
+          <ProjectCard
+            titleHeader="Cool animation project"
+            by="by: Arty McArtis"
+          />
+        </div>
       </main>
     </>
   );
