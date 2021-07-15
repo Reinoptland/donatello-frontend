@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import { Switch, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import LoginForm from "./components/LoginForm";
+import ProjectCard from "./components/ProjectCard";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
           </div>
         </Route>
       </Switch>
+      <ProjectCard titleHeader="Cool animation project" by="by Arty McArtis" />
     </>
   );
 }

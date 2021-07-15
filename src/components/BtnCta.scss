@@ -5,7 +5,7 @@
   font-weight: bold;
   outline: none;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   justify-content: center;
 
   font-family: "Roboto Mono", monospace;
@@ -33,4 +33,15 @@
     width: 240px;
   }
 
+  &--btnDonation {
+    height: 32px;
+    width: 156;
+    padding: 0 $medium;
+  }
+
+  &--btnView {
+    height: 32px;
+    width: 85px;
+    padding: 0 $small;
+  }
 }

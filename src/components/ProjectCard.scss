@@ -1,0 +1,28 @@
+/* * {
+  border: 1px solid red;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+@import "../spacing";
+@import "../colors";
+
+.project-card {
+  //   display: flex;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   flex-direction: column;
+  width: 320px;
+  &__header {
+    background: $lightPurple;
+    padding: $medium;
+    color: $white;
+  }
+  &__main {
+    background: $lightGrey;
+    padding: $medium;
+  }
+  &__footer {
+    background: $darkGrey;
+    padding: $medium;
+  }
+}
