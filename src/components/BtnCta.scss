@@ -33,18 +33,11 @@
     width: 240px;
   }
 
-  &--btnDonation {
+  &--icon {
     height: 32px;
-    width: 156;
     padding: 0 $medium;
-  }
-
-  &--btnView {
-    height: 32px;
-    width: 85px;
-    padding: 0 $small;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 }

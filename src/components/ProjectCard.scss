@@ -1,6 +1,6 @@
-/* * {
-  border: 1px solid red;
-} */
+// * {
+//   border: 1px solid red;
+// }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
 @import "../spacing";
@@ -14,7 +14,7 @@
   width: 320px;
   &__header {
     background: $lightPurple;
-    padding: $medium;
+    padding: $small $medium;
     color: $white;
   }
   &__main {
@@ -64,5 +64,6 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    text-align: center;
   }
 }

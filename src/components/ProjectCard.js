@@ -10,22 +10,16 @@ const ProjectCard = (props) => {
   return (
     <div className="project-card">
       <div className="project-card__header">
-        <h4>{props.titleHeader}</h4>
+        <h3 className="project-card__title">{props.titleHeader}</h3>
         <p className="project-card__text project-card__text--white">
           {props.by}
         </p>
       </div>
       <div className="project-card__main">
         <div className="project-card__tags">
-          <div className="project-card__tags project-card__tags--css">
-            box 1
-          </div>
-          <div className="project-card__tags project-card__tags--css">
-            box 2
-          </div>
-          <div className="project-card__tags project-card__tags--css">
-            box 3
-          </div>
+          <p className="project-card__tags project-card__tags--css">box 1</p>
+          <p className="project-card__tags project-card__tags--css">box 2</p>
+          <p className="project-card__tags project-card__tags--css">box 3</p>
         </div>
         <p className="project-card__text project-card__text--black">
           description project blablbla lalalala lalalala blalalaa blalala
@@ -36,18 +30,30 @@ const ProjectCard = (props) => {
             type="submit"
             icon={
               <FaHandHoldingHeart
-                style={{ color: "white", fontSize: "0,5em" }}
+                style={{
+                  color: "white",
+                  fontSize: "0,5em",
+                  marginRight: "0.5rem",
+                }}
               />
             }
             text="make a donation"
-            size="btnDonation"
+            size="icon"
             variant="purple"
           />
           <Button
             type="submit"
-            icon={<FaRegEye style={{ color: "white", fontSize: "0,5em" }} />}
+            icon={
+              <FaRegEye
+                style={{
+                  color: "white",
+                  fontSize: "0,5em",
+                  marginRight: "0.5rem",
+                }}
+              />
+            }
             text="view"
-            size="btnView"
+            size="icon"
             variant="purple"
           />
         </div>
@@ -55,12 +61,15 @@ const ProjectCard = (props) => {
       <div className="project-card__footer">
         <div>
           <GiPiggyBank style={{ color: "#751cc1", fontSize: "2em" }} />
+          <p>money</p>
         </div>
         <div>
           <FaRegCalendarCheck style={{ color: "#751cc1", fontSize: "2em" }} />
+          <p>days</p>
         </div>
         <div>
           <FaHandHoldingHeart style={{ color: "#751cc1", fontSize: "2em" }} />
+          <p>1000</p>
         </div>
       </div>
     </div>

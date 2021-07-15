@@ -59,7 +59,7 @@ function App() {
           </div>
         </Route>
       </Switch>
-      <ProjectCard titleHeader="Cool animation project" by="by Arty McArtis" />
+      <ProjectCard titleHeader="Cool animation project" by="by: Arty McArtis" />
     </>
   );
 }
