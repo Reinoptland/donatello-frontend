@@ -43,5 +43,8 @@
     height: 32px;
     width: 85px;
     padding: 0 $small;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 }

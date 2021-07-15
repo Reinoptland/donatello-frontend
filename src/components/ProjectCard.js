@@ -9,15 +9,27 @@ const ProjectCard = (props) => {
     <div className="project-card">
       <div className="project-card__header">
         <h4>{props.titleHeader}</h4>
-        <p>{props.by}</p>
+        <p className="project-card__text project-card__text--white">
+          {props.by}
+        </p>
       </div>
       <div className="project-card__main">
-        <div>tag boxes</div>
-        <p>
+        <div className="project-card__tags">
+          <div className="project-card__tags project-card__tags--css">
+            box 1
+          </div>
+          <div className="project-card__tags project-card__tags--css">
+            box 2
+          </div>
+          <div className="project-card__tags project-card__tags--css">
+            box 3
+          </div>
+        </div>
+        <p className="project-card__text project-card__text--black">
           description project blablblalalalalalalalala blalalaa blalala blalala
           blalalablalaalblal
         </p>
-        <div>
+        <div className="project-card__btn">
           <Button
             type="submit"
             icon={

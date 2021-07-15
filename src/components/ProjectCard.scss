@@ -20,9 +20,42 @@
   &__main {
     background: $lightGrey;
     padding: $medium;
+    // display: flex;
+    // justify-content: space-evenly;
+    // flex-direction: column;
   }
   &__footer {
     background: $darkGrey;
     padding: $medium;
+  }
+  &__text {
+    &--white {
+      color: $white;
+    }
+    &--black {
+      color: $black;
+    }
+  }
+  &__tags {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    &--css {
+      border: 2px solid #c3cfda;
+      background: $white;
+      color: $black;
+      height: 32px;
+      padding: 0 $medium;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
   }
 }
