@@ -17,13 +17,14 @@ const ProjectCard = (props) => {
       </div>
       <div className="project-card__main">
         <div className="project-card__tags">
-          <p className="project-card__tags project-card__tags--css">box 1</p>
+          <p className="project-card__tags project-card__tags--css">
+            box 1{/* {props.tags} */}
+          </p>
           <p className="project-card__tags project-card__tags--css">box 2</p>
           <p className="project-card__tags project-card__tags--css">box 3</p>
         </div>
         <p className="project-card__text project-card__text--black">
-          description project blablbla lalalala lalalala blalalaa blalala
-          blalala blalal ablalaal blal
+          {props.description}
         </p>
         <div className="project-card__btn">
           <Button
@@ -61,7 +62,7 @@ const ProjectCard = (props) => {
       <div className="project-card__footer">
         <div>
           <GiPiggyBank style={{ color: "#751cc1", fontSize: "2em" }} />
-          <p>money</p>
+          <p>{props.amount}</p>
         </div>
         <div>
           <FaRegCalendarCheck style={{ color: "#751cc1", fontSize: "2em" }} />
@@ -69,7 +70,7 @@ const ProjectCard = (props) => {
         </div>
         <div>
           <FaHandHoldingHeart style={{ color: "#751cc1", fontSize: "2em" }} />
-          <p>1000</p>
+          <p>{props.count}</p>
         </div>
       </div>
     </div>
