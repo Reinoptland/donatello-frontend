@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../homePage/Home.scss";
 import CallToAction from "../../components/CallToAction";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { GiBiceps } from "react-icons/gi";
 import ProjectCard from "../../components/ProjectCard";
+import axios from "axios";
 
 const Home = () => {
+  const [project, setProject] = useState({});
+  useEffect(() => {
+    async function fetchProject() {
+      try {
+        const response = await axios.get(
+          `https://donatello-development.herokuapp.com/projects?sortBy=totalDonationAmount&limit=3`
+        );
+        setProject(response.data.sortedProjects);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchProject();
+  }, []);
+  console.log("Project", project);
   return (
     <>
       <header className="home__header">
