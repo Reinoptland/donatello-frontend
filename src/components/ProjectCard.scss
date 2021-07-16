@@ -1,0 +1,65 @@
+// * {
+//   border: 1px solid red;
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+@import "../spacing";
+@import "../colors";
+
+.project-card {
+  width: 320px;
+  margin-top: $large;
+  &__header {
+    background: $lightPurple;
+    padding: $small $medium;
+    color: $white;
+  }
+  &__main {
+    background: $lightGrey;
+    padding: $medium;
+  }
+  &__footer {
+    background: $darkGrey;
+    padding: $medium;
+  }
+  &__text {
+    &--white {
+      color: $white;
+    }
+    &--black {
+      color: $black;
+      margin: $medium 0;
+    }
+  }
+  &__tags {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    min-height: 32px;
+    &--css {
+      border: 2px solid #c3cfda;
+      background: $white;
+      color: $black;
+      height: 32px;
+      padding: 0 $medium;
+      margin-right: $small;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+}

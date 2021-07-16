@@ -20,8 +20,6 @@ const SuccessPage = () => {
     }
     fetchPayment();
   }, []);
-  console.log("Payment", payment);
-
   return (
     <aside className="cta cta--project">
       <CallToAction

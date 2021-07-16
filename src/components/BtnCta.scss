@@ -5,7 +5,7 @@
   font-weight: bold;
   outline: none;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   justify-content: center;
 
   font-family: "Roboto Mono", monospace;
@@ -33,4 +33,11 @@
     width: 240px;
   }
 
+  &--icon {
+    height: 32px;
+    padding: 0 $medium;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

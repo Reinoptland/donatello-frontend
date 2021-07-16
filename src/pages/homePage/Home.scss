@@ -1,0 +1,30 @@
+// * {
+//   border: 2px solid red;
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
+@import "../../colors";
+@import "../../spacing";
+
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__header {
+    margin-bottom: $xl;
+  }
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: $xl;
+  }
+  &__showcase-title {
+    flex-basis: 100%;
+    margin-top: $medium;
+    display: flex;
+    align-items: center;
+  }
+}
