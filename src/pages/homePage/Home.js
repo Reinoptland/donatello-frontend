@@ -7,7 +7,7 @@ import ProjectCard from "../../components/ProjectCard";
 import axios from "axios";
 
 const Home = () => {
-  const [project, setProject] = useState({});
+  const [project, setProject] = useState([]);
   useEffect(() => {
     async function fetchProject() {
       try {
@@ -53,40 +53,21 @@ const Home = () => {
         </div>
       </header>
       <main className="home__main">
-        <div>
-          <ProjectCard
-            titleHeader={project[0]?.projectName}
-            by={`by: ${project[0]?.user?.firstName} ${project[0]?.user?.lastName}`}
-            description={project[0]?.projectDescription}
-            amount={project[0]?.totalDonationAmount}
-            count={project[0]?.totalDonationCount}
-          />
-        </div>
-        <div>
-          <ProjectCard
-            titleHeader={project[1]?.projectName}
-            by={`by: ${project[1]?.user?.firstName} ${project[1]?.user?.lastName}`}
-            // tags={
-            //   project[0].tags?.name &&
-            //   project[0].tags?.name.map((tag) => {
-            //     console.log("tags", tag);
-            //     return <p key={tag.tag.name}>{tag.tag.name}</p>;
-            //   })
-            // }
-            description={project[1]?.projectDescription}
-            amount={project[1]?.totalDonationAmount}
-            count={project[1]?.totalDonationCount}
-          />
-        </div>
-        <div>
-          <ProjectCard
-            titleHeader={project[2]?.projectName}
-            by={`by: ${project[2]?.user?.firstName} ${project[2]?.user?.lastName}`}
-            description={project[2]?.projectDescription}
-            amount={project[2]?.totalDonationAmount}
-            count={project[2]?.totalDonationCount}
-          />
-        </div>
+        {project &&
+          project.map((project) => {
+            return (
+              <div key={project.id}>
+                <ProjectCard
+                  titleHeader={project.projectName}
+                  by={`by: ${project.user.firstName} ${project.user.lastName}`}
+                  tags={project.tags}
+                  description={project.projectDescription}
+                  amount={project.totalDonationAmount}
+                  count={project.totalDonationCount}
+                />
+              </div>
+            );
+          })}
       </main>
     </>
   );

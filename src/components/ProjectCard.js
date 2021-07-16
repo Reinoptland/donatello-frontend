@@ -7,6 +7,7 @@ import { GiPiggyBank } from "react-icons/gi";
 import { FaRegCalendarCheck } from "react-icons/fa";
 
 const ProjectCard = (props) => {
+  console.log("props", props);
   return (
     <div className="project-card">
       <div className="project-card__header">
@@ -17,11 +18,17 @@ const ProjectCard = (props) => {
       </div>
       <div className="project-card__main">
         <div className="project-card__tags">
-          <p className="project-card__tags project-card__tags--css">
-            box 1{/* {props.tags} */}
-          </p>
-          <p className="project-card__tags project-card__tags--css">box 2</p>
-          <p className="project-card__tags project-card__tags--css">box 3</p>
+          {props.tags &&
+            props.tags.map((tag) => {
+              return (
+                <p
+                  key={tag.name}
+                  className="project-card__tags project-card__tags--css"
+                >
+                  {tag.name}
+                </p>
+              );
+            })}
         </div>
         <p className="project-card__text project-card__text--black">
           {props.description}
