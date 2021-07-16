@@ -1,4 +1,5 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import "../donationCard/DonationCard.scss";
 import {
   FaHandHoldingHeart,
@@ -7,11 +8,31 @@ import {
 } from "react-icons/fa";
 import { GiPiggyBank } from "react-icons/gi";
 import Button from "../BtnCtA";
+import axios from "axios";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
   //   const createdAt = new Date(props.createdAt);
   //   const today = new Date();
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = async (data) => {
+    console.log(data);
+    try {
+      const response = await axios.post(
+        "https://donatello-development.herokuapp.com/projects/a596d932-c9c9-4276-9c44-7d3bda879cf2/donations",
+        { donationAmount: data.amount, comment: data.comment }
+      );
+      console.log("response", response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="donation-card">
@@ -21,7 +42,7 @@ const DonationCard = (props) => {
           {props.by}
         </p>
       </div>
-      <div className="donation-card__main">
+      <form onSubmit={handleSubmit(onSubmit)} className="donation-card__main">
         <div className="donation-card__tags">
           {props.tags.map((tag) => {
             return (
@@ -48,11 +69,25 @@ const DonationCard = (props) => {
                 </button>
               );
             })}
-            <input placeholder="Enter an amount" />
+            <label className="form__label" htmlFor="amount">
+              <input
+                className="form__input"
+                type="number"
+                placeholder="Enter an amount"
+                {...register("amount", { required: true })}
+              />
+            </label>
           </aside>
         </div>
+        <h5>Leave a comment with your donation (optional)</h5>
         <div className="donation-card__comment">
-          <textarea placeholder="Leave your comment here" />
+          <label className="form__label" htmlFor="comment">
+            <textarea
+              className="form__input"
+              placeholder="Leave your comment here"
+              {...register("comment", { maxLength: 255 })}
+            />
+          </label>
           <p>0/255 characters</p>
         </div>
         <div className="donation-card__btn">
@@ -78,7 +113,7 @@ const DonationCard = (props) => {
             <FaIdeal style={{ fontSize: "2em", marginLeft: "0.5rem" }} />
           </h4>
         </div>
-      </div>
+      </form>
       <div className="donation-card__footer">
         <div>
           <GiPiggyBank
