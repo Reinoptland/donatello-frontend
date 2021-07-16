@@ -16,21 +16,45 @@ const DonationCard = (props) => {
   return (
     <div className="donation-card">
       <div className="donation-card__header">
-        <h3 className="donation-card__title">Sociaal Oosterhout platform</h3>
+        <h3 className="donation-card__title">{props.titleHeader}</h3>
         <p className="donation-card__text donation-card__text--white">
-          by: Arnoud Bouman
+          {props.by}
         </p>
       </div>
       <div className="donation-card__main">
         <div className="donation-card__tags">
-          <p className="donation-card__tags donation-card__tags--css">
-            Community
-          </p>
+          {props.tags.map((tag) => {
+            return (
+              <p
+                key={tag.name}
+                className="donation-card__tags donation-card__tags--css"
+              >
+                {tag.name}
+              </p>
+            );
+          })}
         </div>
         <p className="donation-card__text donation-card__text--black">
-          Description project donation
+          {props.description}
         </p>
         <h4>How much do you want to donate?</h4>
+        <div className="donation-card__amount">
+          <aside className="donation-card__amount-display">€ 25</aside>
+          <aside className="donation-card__amount-inputs">
+            {[1, 5, 10, 25, 50, 100, 250].map((amount) => {
+              return (
+                <button key={amount} className="donation-card__amount-btn">
+                  € {amount}
+                </button>
+              );
+            })}
+            <input placeholder="Enter an amount" />
+          </aside>
+        </div>
+        <div className="donation-card__comment">
+          <textarea placeholder="Leave your comment here" />
+          <p>0/255 characters</p>
+        </div>
         <div className="donation-card__btn">
           <Button
             type="submit"
