@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../homePage/Home.scss";
 import CallToAction from "../../components/CallToAction";
-import { FaHandHoldingHeart } from "react-icons/fa";
+import { FaHandHoldingHeart, FaStar } from "react-icons/fa";
 import { GiBiceps } from "react-icons/gi";
-import ProjectCard from "../../components/ProjectCard";
-import axios from "axios";
+import { MdFiberNew } from "react-icons/md";
+import ProjectShowCase from "../../components/ProjectShowCase";
 
 const Home = () => {
-  const [project, setProject] = useState([]);
-  useEffect(() => {
-    async function fetchProject() {
-      try {
-        const response = await axios.get(
-          `https://donatello-development.herokuapp.com/projects?sortBy=totalDonationAmount&limit=3`
-        );
-        setProject(response.data.sortedProjects);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchProject();
-  }, []);
   return (
     <>
       <header className="home__header">
@@ -52,22 +38,20 @@ const Home = () => {
         </div>
       </header>
       <main className="home__main">
-        {project &&
-          project.map((project) => {
-            return (
-              <div key={project.id}>
-                <ProjectCard
-                  titleHeader={project.projectName}
-                  by={`by: ${project.user.firstName} ${project.user.lastName}`}
-                  tags={project.tags}
-                  description={project.projectDescription}
-                  amount={project.totalDonationAmount}
-                  createdAt={project.createdAt}
-                  count={project.totalDonationCount}
-                />
-              </div>
-            );
-          })}
+        <h2 className="home__showcase-title">
+          <FaStar
+            style={{ color: "#751cc1", fontSize: "2em", marginRight: "0.5rem" }}
+          />
+          Featured
+        </h2>
+        <ProjectShowCase url="https://donatello-development.herokuapp.com/projects?sortBy=totalDonationAmount&limit=3" />
+        <h2 className="home__showcase-title">
+          <MdFiberNew
+            style={{ color: "#751cc1", fontSize: "2em", marginRight: "0.5rem" }}
+          />
+          Most recent
+        </h2>
+        <ProjectShowCase url="https://donatello-development.herokuapp.com/projects?sortBy=recent&limit=3" />
       </main>
     </>
   );

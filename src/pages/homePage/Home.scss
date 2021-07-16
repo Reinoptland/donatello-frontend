@@ -16,7 +16,15 @@
   }
   &__main {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: $xl;
+  }
+  &__showcase-title {
+    flex-basis: 100%;
+    margin-top: $medium;
+    display: flex;
     align-items: center;
   }
 }
