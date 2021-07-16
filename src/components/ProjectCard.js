@@ -71,15 +71,33 @@ const ProjectCard = (props) => {
       </div>
       <div className="project-card__footer">
         <div>
-          <GiPiggyBank style={{ color: "#751cc1", fontSize: "2em" }} />
-          <p>{props.amount}</p>
+          <GiPiggyBank
+            style={{
+              color: "#751cc1",
+              fontSize: "2em",
+              marginBottom: "0.5rem",
+            }}
+          />
+          <p>€ {props.amount}</p>
         </div>
         <div>
-          <FaRegCalendarCheck style={{ color: "#751cc1", fontSize: "2em" }} />
+          <FaRegCalendarCheck
+            style={{
+              color: "#751cc1",
+              fontSize: "2em",
+              marginBottom: "0.5rem",
+            }}
+          />
           <p>{formatDistance(createdAt, today)} ago</p>
         </div>
         <div>
-          <FaHandHoldingHeart style={{ color: "#751cc1", fontSize: "2em" }} />
+          <FaHandHoldingHeart
+            style={{
+              color: "#751cc1",
+              fontSize: "2em",
+              marginBottom: "0.5rem",
+            }}
+          />
           <p>{props.count}</p>
         </div>
       </div>

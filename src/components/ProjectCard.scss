@@ -32,7 +32,7 @@
   }
   &__tags {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
     align-items: center;
     min-height: 32px;
@@ -42,6 +42,7 @@
       color: $black;
       height: 32px;
       padding: 0 $medium;
+      margin-right: $small;
       display: flex;
       align-items: center;
     }
@@ -55,7 +56,7 @@
   }
   &__footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
     align-items: center;
     text-align: center;
