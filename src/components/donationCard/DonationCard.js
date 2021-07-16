@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import "../donationCard/DonationCard.scss";
 import {
   FaHandHoldingHeart,
@@ -15,6 +16,8 @@ const DonationCard = (props) => {
   //   const createdAt = new Date(props.createdAt);
   //   const today = new Date();
 
+  //   let history = useHistory();
+
   const {
     register,
     handleSubmit,
@@ -28,7 +31,7 @@ const DonationCard = (props) => {
         "https://donatello-development.herokuapp.com/projects/a596d932-c9c9-4276-9c44-7d3bda879cf2/donations",
         { donationAmount: data.amount, comment: data.comment }
       );
-      console.log("response", response);
+      window.location.assign(response.data.payment._links.checkout.href);
     } catch (error) {
       console.error(error);
     }
