@@ -6,9 +6,21 @@
 @import "../../spacing";
 @import "../../colors";
 
+.popup {
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c3cfdaaa;
+}
+
 .donation-card {
-  width: 435px;
+  width: 440px;
   margin-top: $large;
+  position: fixed;
+  top: 25vh;
+  left: calc(50% - 220px);
+  z-index: 10;
   &__header {
     background: $lightPurple;
     padding: $small $medium;
