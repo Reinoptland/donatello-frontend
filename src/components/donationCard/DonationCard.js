@@ -1,8 +1,12 @@
 import React from "react";
 import "../donationCard/DonationCard.scss";
-import { FaHandHoldingHeart } from "react-icons/fa";
+import {
+  FaHandHoldingHeart,
+  FaIdeal,
+  FaRegCalendarCheck,
+} from "react-icons/fa";
 import { GiPiggyBank } from "react-icons/gi";
-import { FaRegCalendarCheck } from "react-icons/fa";
+import Button from "../BtnCtA";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
@@ -27,6 +31,29 @@ const DonationCard = (props) => {
           Description project donation
         </p>
         <h4>How much do you want to donate?</h4>
+        <div className="donation-card__btn">
+          <Button
+            type="submit"
+            icon={
+              <FaHandHoldingHeart
+                style={{
+                  color: "white",
+                  fontSize: "0,5em",
+                  marginRight: "0.5rem",
+                }}
+              />
+            }
+            text="Support Arnoud with €€€€€"
+            size="medium"
+            variant="purple"
+          />
+        </div>
+        <div className="donation-card__payment">
+          <h4 className="donation-card__ideal">
+            Payment methods:{" "}
+            <FaIdeal style={{ fontSize: "2em", marginLeft: "0.5rem" }} />
+          </h4>
+        </div>
       </div>
       <div className="donation-card__footer">
         <div>

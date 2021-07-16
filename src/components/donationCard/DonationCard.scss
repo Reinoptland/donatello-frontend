@@ -55,6 +55,16 @@
     flex-direction: row;
     align-items: center;
   }
+  &__payment {
+    display: flex;
+    justify-content: center;
+    margin-top: $medium;
+  }
+
+  &__ideal {
+    align-items: center;
+  }
+
   &__footer {
     display: flex;
     justify-content: space-around;
