@@ -5,8 +5,12 @@ import { FaHandHoldingHeart } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import { GiPiggyBank } from "react-icons/gi";
 import { FaRegCalendarCheck } from "react-icons/fa";
+import { formatDistance } from "date-fns";
 
 const ProjectCard = (props) => {
+  const createdAt = new Date(props.createdAt);
+  const today = new Date();
+
   return (
     <div className="project-card">
       <div className="project-card__header">
@@ -72,7 +76,7 @@ const ProjectCard = (props) => {
         </div>
         <div>
           <FaRegCalendarCheck style={{ color: "#751cc1", fontSize: "2em" }} />
-          <p>days</p>
+          <p>{formatDistance(createdAt, today)} ago</p>
         </div>
         <div>
           <FaHandHoldingHeart style={{ color: "#751cc1", fontSize: "2em" }} />

@@ -62,6 +62,7 @@ const Home = () => {
                   tags={project.tags}
                   description={project.projectDescription}
                   amount={project.totalDonationAmount}
+                  createdAt={project.createdAt}
                   count={project.totalDonationCount}
                 />
               </div>
