@@ -5,6 +5,7 @@ import { FaHandHoldingHeart, FaStar } from "react-icons/fa";
 import { GiBiceps } from "react-icons/gi";
 import { MdFiberNew } from "react-icons/md";
 import ProjectShowCase from "../../components/ProjectShowCase";
+import DonationCard from "../../components/donationCard/DonationCard";
 
 const Home = () => {
   return (
@@ -53,6 +54,8 @@ const Home = () => {
         </h2>
         <ProjectShowCase url="https://donatello-development.herokuapp.com/projects?sortBy=recent&limit=3" />
       </main>
+
+      <DonationCard />
     </>
   );
 };
