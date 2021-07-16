@@ -60,6 +60,39 @@
       align-items: center;
     }
   }
+  &__amount {
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 150px;
+    margin: $medium 0;
+  }
+  &__amount-inputs {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  &__amount-display {
+    width: 128px;
+    height: 150px;
+    background-color: $lightPurple;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Mono", monospace;
+    &--white {
+      color: $white;
+    }
+  }
+
+  &__comment {
+    margin: $medium 0;
+  }
+
+  &__charleft {
+    display: flex;
+    justify-content: flex-end;
+  }
 
   &__btn {
     display: flex;
@@ -86,3 +119,7 @@
     text-align: center;
   }
 }
+
+// .form__label {
+
+// }

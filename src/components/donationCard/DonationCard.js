@@ -62,16 +62,18 @@ const DonationCard = (props) => {
           </p>
           <h4>How much do you want to donate?</h4>
           <div className="donation-card__amount">
-            <aside className="donation-card__amount-display">€ 25</aside>
+            <aside className="donation-card__amount-display donation-card__amount-display--white">
+              €25
+            </aside>
             <aside className="donation-card__amount-inputs">
-              {/* {[1, 5, 10, 25, 50, 100, 250].map((amount) => {
-              return (
-                <button key={amount} className="donation-card__amount-btn">
-                  € {amount}
-                </button>
-              );
-            })} */}
-              <label className="form__label" htmlFor="amount">
+              {[1, 5, 10, 25, 50, 100, 250].map((amount) => {
+                return (
+                  <button key={amount} className="donation-card__amount-btn">
+                    € {amount}
+                  </button>
+                );
+              })}
+              <label className="form__label--input" htmlFor="amount">
                 <input
                   className="form__input"
                   type="number"
@@ -90,7 +92,7 @@ const DonationCard = (props) => {
                 {...register("comment", { maxLength: 255 })}
               />
             </label>
-            {/* <p>0/255 characters</p> */}
+            <p className="donation-card__charleft">0/255 characters</p>
           </div>
           <div className="donation-card__btn">
             <Button
