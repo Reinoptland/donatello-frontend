@@ -21,7 +21,6 @@ const Home = () => {
     }
     fetchProject();
   }, []);
-  console.log("Project", project);
   return (
     <>
       <header className="home__header">

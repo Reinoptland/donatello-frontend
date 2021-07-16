@@ -7,7 +7,6 @@ import { GiPiggyBank } from "react-icons/gi";
 import { FaRegCalendarCheck } from "react-icons/fa";
 
 const ProjectCard = (props) => {
-  console.log("props", props);
   return (
     <div className="project-card">
       <div className="project-card__header">
