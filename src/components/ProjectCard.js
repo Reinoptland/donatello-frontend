@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProjectCard.scss";
 import Button from "./BtnCtA";
 import { FaHandHoldingHeart } from "react-icons/fa";
@@ -6,10 +6,13 @@ import { FaRegEye } from "react-icons/fa";
 import { GiPiggyBank } from "react-icons/gi";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { formatDistance } from "date-fns";
+import DonationCard from "./donationCard/DonationCard";
 
 const ProjectCard = (props) => {
   const createdAt = new Date(props.createdAt);
   const today = new Date();
+
+  const [popup, setPopup] = useState(false);
 
   return (
     <div className="project-card">
@@ -38,7 +41,8 @@ const ProjectCard = (props) => {
         </p>
         <div className="project-card__btn">
           <Button
-            type="submit"
+            type="button"
+            onClick={() => setPopup(true)}
             icon={
               <FaHandHoldingHeart
                 style={{
@@ -53,7 +57,7 @@ const ProjectCard = (props) => {
             variant="purple"
           />
           <Button
-            type="submit"
+            type="button"
             icon={
               <FaRegEye
                 style={{
@@ -101,6 +105,15 @@ const ProjectCard = (props) => {
           <p>{props.count}</p>
         </div>
       </div>
+      {popup && (
+        <DonationCard
+          id={props.id}
+          titleHeader={props.titleHeader}
+          by={props.by}
+          tags={props.tags}
+          description={props.description}
+        />
+      )}
     </div>
   );
 };

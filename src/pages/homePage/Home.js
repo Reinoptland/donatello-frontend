@@ -54,13 +54,6 @@ const Home = () => {
         </h2>
         <ProjectShowCase url="https://donatello-development.herokuapp.com/projects?sortBy=recent&limit=3" />
       </main>
-
-      <DonationCard
-        titleHeader="Sociaal Oosterhout platform"
-        by="by: Arnoud Bouman"
-        tags={[{ name: "Community" }]}
-        description="Description project donation"
-      />
     </>
   );
 };

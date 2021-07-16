@@ -26,7 +26,7 @@ const DonationCard = (props) => {
     console.log(data);
     try {
       const response = await axios.post(
-        "https://donatello-development.herokuapp.com/projects/a596d932-c9c9-4276-9c44-7d3bda879cf2/donations",
+        `https://donatello-development.herokuapp.com/projects/${props.id}/donations`,
         { donationAmount: data.amount, comment: data.comment }
       );
       window.location.assign(response.data.payment._links.checkout.href);
@@ -104,7 +104,7 @@ const DonationCard = (props) => {
                   }}
                 />
               }
-              text="Support Arnoud with €€€€€"
+              text={`support ${props.by} with €€€€`}
               size="medium"
               variant="purple"
             />
