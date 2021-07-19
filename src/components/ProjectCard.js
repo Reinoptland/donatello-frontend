@@ -52,7 +52,9 @@ const ProjectCard = (props) => {
                 }}
               />
             }
-            text="make a donation"
+            text={
+              props.count > 0 ? "Make a donation" : "Be the first to donate"
+            }
             size="icon"
             variant="purple"
           />
