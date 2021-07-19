@@ -14,8 +14,6 @@ const ProjectCard = (props) => {
 
   const [popup, setPopup] = useState(false);
 
-  console.log("CARD", props);
-
   return (
     <div className="project-card">
       <div className="project-card__header">
