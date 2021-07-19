@@ -23,7 +23,7 @@ function App() {
           <Signup />
         </Route>
 
-        <Route path="/success">
+        <Route path="/project/:projectId/donations/:donationId/status">
           <SuccessPage />
         </Route>
 
