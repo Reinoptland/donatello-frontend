@@ -25,6 +25,13 @@
     background: $lightPurple;
     padding: $small $medium;
     color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__close {
+    display: flex;
+    justify-content: flex-end;
   }
   &__main {
     background: $lightGrey;

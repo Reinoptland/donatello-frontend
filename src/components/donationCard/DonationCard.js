@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom";
 import "../donationCard/DonationCard.scss";
@@ -7,12 +7,14 @@ import {
   FaIdeal,
   FaRegCalendarCheck,
 } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 import { GiPiggyBank } from "react-icons/gi";
 import Button from "../BtnCtA";
 import axios from "axios";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
+  const [close, setClose] = useState(false);
   //   const createdAt = new Date(props.createdAt);
   //   const today = new Date();
 
@@ -39,10 +41,21 @@ const DonationCard = (props) => {
     <div className="popup">
       <div className="donation-card">
         <div className="donation-card__header">
-          <h3 className="donation-card__title">{props.titleHeader}</h3>
-          <p className="donation-card__text donation-card__text--white">
-            {props.by}
-          </p>
+          <div>
+            <h3 className="donation-card__title">{props.titleHeader}</h3>
+            <p className="donation-card__text donation-card__text--white">
+              {props.by}
+            </p>
+          </div>
+          <div className="donation-card__close">
+            <ImCross
+              style={{
+                color: "white",
+                fontSize: "1.5em",
+                // marginRight: "0.5rem",
+              }}
+            />
+          </div>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="donation-card__main">
           <div className="donation-card__tags">
