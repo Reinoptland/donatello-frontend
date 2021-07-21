@@ -106,7 +106,7 @@ const DonationCard = (props) => {
                   }}
                 />
               }
-              text={`support ${props.by} with €€€€`}
+              text={`support ${props.firstName} with €€€€`}
               size="medium"
               variant="purple"
             />

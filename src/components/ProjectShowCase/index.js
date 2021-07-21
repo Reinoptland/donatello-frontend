@@ -24,6 +24,8 @@ export default function ProjectShowCase(props) {
               <ProjectCard
                 id={project.id}
                 titleHeader={project.projectName}
+                firstName={project.user.firstName}
+                lastName={project.user.lastName}
                 by={`by: ${project.user.firstName} ${project.user.lastName}`}
                 tags={project.tags}
                 description={project.projectDescription}
