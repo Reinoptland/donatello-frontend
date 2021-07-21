@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom";
 import "../donationCard/DonationCard.scss";
@@ -14,7 +14,10 @@ import axios from "axios";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
-  const [close, setClose] = useState(false);
+  const handleClickAway = () => {
+    console.log("click away icon");
+  };
+
   //   const createdAt = new Date(props.createdAt);
   //   const today = new Date();
 
@@ -47,7 +50,11 @@ const DonationCard = (props) => {
               {props.by}
             </p>
           </div>
-          <div className="donation-card__close">
+          <button
+            type="button"
+            onClick={handleClickAway}
+            className="donation-card__button"
+          >
             <ImCross
               style={{
                 color: "white",
@@ -55,7 +62,7 @@ const DonationCard = (props) => {
                 // marginRight: "0.5rem",
               }}
             />
-          </div>
+          </button>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="donation-card__main">
           <div className="donation-card__tags">

@@ -29,9 +29,13 @@
     align-items: center;
     justify-content: space-between;
   }
-  &__close {
+  &__button {
     display: flex;
     justify-content: flex-end;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
   &__main {
     background: $lightGrey;
