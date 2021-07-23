@@ -22,6 +22,7 @@ const DonationCard = (props) => {
     // watch,
     // formState: { errors },
   } = useForm();
+
   const onSubmit = async (data) => {
     console.log(data);
     try {

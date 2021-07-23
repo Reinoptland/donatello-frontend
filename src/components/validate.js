@@ -49,3 +49,10 @@ export function validateLogin(values) {
     return errors;
 }
 
+
+export function validateDonation (values) {
+    let errors = {};
+
+
+
+}
