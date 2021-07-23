@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom";
 import "../donationCard/DonationCard.scss";
@@ -11,11 +11,12 @@ import { ImCross } from "react-icons/im";
 import { GiPiggyBank } from "react-icons/gi";
 import Button from "../BtnCtA";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
   const handleClickAway = () => {
-    console.log("click away icon");
+    console.log("clicking icon");
   };
 
   //   const createdAt = new Date(props.createdAt);
