@@ -11,14 +11,9 @@ import { ImCross } from "react-icons/im";
 import { GiPiggyBank } from "react-icons/gi";
 import Button from "../BtnCtA";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
-  const handleClickAway = () => {
-    console.log("clicking icon");
-  };
-
   //   const createdAt = new Date(props.createdAt);
   //   const today = new Date();
 
@@ -53,7 +48,7 @@ const DonationCard = (props) => {
           </div>
           <button
             type="button"
-            onClick={handleClickAway}
+            onClick={props.close}
             className="donation-card__button"
           >
             <ImCross

@@ -116,6 +116,7 @@ const ProjectCard = (props) => {
           by={props.by}
           tags={props.tags}
           description={props.description}
+          close={() => setPopup(false)}
         />
       )}
     </div>
