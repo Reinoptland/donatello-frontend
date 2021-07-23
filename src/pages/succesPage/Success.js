@@ -4,12 +4,19 @@ import "../succesPage/Success.scss";
 import CallToAction from "../../components/CallToAction";
 import { FaHandsHelping } from "react-icons/fa";
 import axios from "axios";
+import GridLoader from "react-spinners/GridLoader";
 
 const SuccessPage = () => {
   const [payment, setPayment] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState("#b78add")
 
   const params = useParams();
   console.log("Params", params.donationId, params.projectId);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000)
+  }, [])
 
   useEffect(() => {
     async function fetchPayment() {
@@ -25,6 +32,8 @@ const SuccessPage = () => {
     fetchPayment();
   }, []);
   return (
+      <>
+      {loading === false ? (
     <aside className="cta cta--project">
       <Link to="/">
         <CallToAction
@@ -36,7 +45,10 @@ const SuccessPage = () => {
           btnText="View other projects"
         />
       </Link>
-    </aside>
+    </aside>) : ( <div className="loader"><h2>Your donation is being processed</h2> <GridLoader color={color} /> </div>
+      )
+       }
+      </>
   );
 };
 
