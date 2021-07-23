@@ -111,9 +111,12 @@ const ProjectCard = (props) => {
         <DonationCard
           id={props.id}
           titleHeader={props.titleHeader}
+          firstName={props.firstName}
+          lastName={props.lastName}
           by={props.by}
           tags={props.tags}
           description={props.description}
+          close={() => setPopup(false)}
         />
       )}
     </div>

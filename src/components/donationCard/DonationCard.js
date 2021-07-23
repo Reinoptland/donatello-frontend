@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom";
 import "../donationCard/DonationCard.scss";
@@ -7,6 +7,7 @@ import {
   FaIdeal,
   FaRegCalendarCheck,
 } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 import { GiPiggyBank } from "react-icons/gi";
 import Button from "../BtnCtA";
 import axios from "axios";
@@ -39,10 +40,25 @@ const DonationCard = (props) => {
     <div className="popup">
       <div className="donation-card">
         <div className="donation-card__header">
-          <h3 className="donation-card__title">{props.titleHeader}</h3>
-          <p className="donation-card__text donation-card__text--white">
-            {props.by}
-          </p>
+          <div>
+            <h3 className="donation-card__title">{props.titleHeader}</h3>
+            <p className="donation-card__text donation-card__text--white">
+              {props.by}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={props.close}
+            className="donation-card__button"
+          >
+            <ImCross
+              style={{
+                color: "white",
+                fontSize: "1.5em",
+                // marginRight: "0.5rem",
+              }}
+            />
+          </button>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="donation-card__main">
           <div className="donation-card__tags">
@@ -106,7 +122,7 @@ const DonationCard = (props) => {
                   }}
                 />
               }
-              text={`support ${props.by} with €€€€`}
+              text={`support ${props.firstName} with €€€€`}
               size="medium"
               variant="purple"
             />
