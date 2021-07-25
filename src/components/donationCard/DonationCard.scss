@@ -103,6 +103,7 @@
     border-radius: 2px;
     height: 32px;
     padding: 0 $medium;
+    margin-left: 10px;
   }
 
   &__comment {
@@ -148,8 +149,13 @@
   border: 2px solid $darkGrey;
   border-radius: 2px;
   outline: none;
-  // display: flex;
-  // align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
   margin-top: 25px;
-  // padding: 5px;
+
+  margin-left: 10px;
+}
+
+input.form__input {
+  padding: 10px 5px;
 }
