@@ -1,6 +1,6 @@
-// * {
-//   border: 1px solid red;
-// }
+* {
+  border: 1px solid red;
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500&display=swap");
 @import "../../spacing";
@@ -74,19 +74,21 @@
   &__amount {
     display: flex;
     justify-content: space-evenly;
-    min-height: 150px;
+    max-height: 150px;
     margin: $medium 0;
   }
   &__amount-inputs {
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   &__amount-display {
     width: 128px;
     height: 150px;
     background-color: $lightPurple;
-    border-radius: 4px;
+    padding: 0 40px;
+    border-radius: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,6 +96,13 @@
     &--white {
       color: $white;
     }
+  }
+  &__amount-btn {
+    color: $darkPurple;
+    border: 2px solid $lightPurple;
+    border-radius: 2px;
+    height: 32px;
+    padding: 0 $medium;
   }
 
   &__comment {
@@ -131,6 +140,16 @@
   }
 }
 
-// .form__label {
+.form__label--input {
+  width: 280px;
+}
 
-// }
+.form__input {
+  border: 2px solid $darkGrey;
+  border-radius: 2px;
+  outline: none;
+  // display: flex;
+  // align-items: flex-end;
+  margin-top: 25px;
+  // padding: 5px;
+}
