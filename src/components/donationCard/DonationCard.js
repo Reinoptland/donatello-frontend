@@ -55,7 +55,6 @@ const DonationCard = (props) => {
               style={{
                 color: "white",
                 fontSize: "1.5em",
-                // marginRight: "0.5rem",
               }}
             />
           </button>
@@ -82,6 +81,7 @@ const DonationCard = (props) => {
               €25
             </aside>
             <aside className="donation-card__amount-inputs">
+              {/* <div className="donation-card__amount-div"> */}
               {[1, 5, 10, 25, 50, 100, 250].map((amount) => {
                 return (
                   <button key={amount} className="donation-card__amount-btn">
@@ -89,6 +89,7 @@ const DonationCard = (props) => {
                   </button>
                 );
               })}
+              {/* </div> */}
               <label className="form__label--input" htmlFor="amount">
                 <input
                   className="form__input"
