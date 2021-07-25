@@ -81,7 +81,6 @@ const DonationCard = (props) => {
               €25
             </aside>
             <aside className="donation-card__amount-inputs">
-              {/* <div className="donation-card__amount-div"> */}
               {[1, 5, 10, 25, 50, 100, 250].map((amount) => {
                 return (
                   <button key={amount} className="donation-card__amount-btn">
@@ -89,7 +88,6 @@ const DonationCard = (props) => {
                   </button>
                 );
               })}
-              {/* </div> */}
               <label className="form__label--input" htmlFor="amount">
                 <input
                   className="form__input"
@@ -104,7 +102,7 @@ const DonationCard = (props) => {
           <div className="donation-card__comment">
             <label className="form__label" htmlFor="comment">
               <textarea
-                className="form__input"
+                className="form__input--text"
                 placeholder="Leave your comment here"
                 {...register("comment", { maxLength: 255 })}
               />
