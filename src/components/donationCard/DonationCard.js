@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom";
 import "../donationCard/DonationCard.scss";
@@ -55,7 +55,6 @@ const DonationCard = (props) => {
               style={{
                 color: "white",
                 fontSize: "1.5em",
-                // marginRight: "0.5rem",
               }}
             />
           </button>
@@ -103,7 +102,7 @@ const DonationCard = (props) => {
           <div className="donation-card__comment">
             <label className="form__label" htmlFor="comment">
               <textarea
-                className="form__input"
+                className="form__input--text"
                 placeholder="Leave your comment here"
                 {...register("comment", { maxLength: 255 })}
               />

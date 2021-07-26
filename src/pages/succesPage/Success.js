@@ -9,14 +9,14 @@ import GridLoader from "react-spinners/GridLoader";
 const SuccessPage = () => {
   const [payment, setPayment] = useState({});
   const [loading, setLoading] = useState(true);
-  const [color, setColor] = useState("#b78add")
+  const [color, setColor] = useState("#b78add");
 
   const params = useParams();
   console.log("Params", params.donationId, params.projectId);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000)
-  }, [])
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
 
   useEffect(() => {
     async function fetchPayment() {
@@ -32,23 +32,31 @@ const SuccessPage = () => {
     fetchPayment();
   }, []);
   return (
-      <>
-      {loading === false ? (
-    <aside className="cta cta--project">
-      <Link to="/">
-        <CallToAction
-          background="purple"
-          icon={<FaHandsHelping style={{ color: "white", fontSize: "5em" }} />}
-          title={`Thank you for supporting ${payment.project?.user?.firstName}'s project:`}
-          description={payment.project?.projectName}
-          button="white"
-          btnText="View other projects"
-        />
-      </Link>
-    </aside>) : ( <div className="loader"><h2>Your donation is being processed</h2> <GridLoader color={color} /> </div>
-      )
-       }
-      </>
+    <>
+      <div className="wrapper-succespage">
+        {loading === false ? (
+          <aside className="cta cta--project">
+            <Link to="/">
+              <CallToAction
+                background="purple"
+                icon={
+                  <FaHandsHelping style={{ color: "white", fontSize: "5em" }} />
+                }
+                title={`Thank you for supporting ${payment.project?.user?.firstName}'s project:`}
+                description={payment.project?.projectName}
+                button="white"
+                btnText="View other projects"
+              />
+            </Link>
+          </aside>
+        ) : (
+          <div className="loader">
+            <h2>Your donation is being processed</h2>{" "}
+            <GridLoader color={color} />{" "}
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
