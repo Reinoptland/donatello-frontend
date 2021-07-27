@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom";
 import "../donationCard/DonationCard.scss";
@@ -14,6 +14,7 @@ import axios from "axios";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
+  const [count, setCount] = useState('0')
   //   const createdAt = new Date(props.createdAt);
   //   const today = new Date();
 
@@ -122,9 +123,10 @@ const DonationCard = (props) => {
                 className="form__input--text"
                 placeholder="Leave your comment here"
                 {...register("comment", { maxLength: 255 })}
+                  onChange={e => setCount(e.target.value.length)                  }
               />
             </label>
-            <p className="donation-card__charleft">0/255 characters</p>
+            <p className="donation-card__charleft">{count}/225</p>
           </div>
           <div className="donation-card__btn">
             <Button
