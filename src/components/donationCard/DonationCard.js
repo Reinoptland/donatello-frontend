@@ -86,8 +86,8 @@ const DonationCard = (props) => {
           <h4>How much do you want to donate?</h4>
           <div className="donation-card__amount">
             <aside className="donation-card__amount-display donation-card__amount-display--white">
-              <input type="text" {...register("value")} />
-              {/* {setValue} */}
+                <input className="show-amount" type="text" {...register("value")} />
+
             </aside>
             <aside className="donation-card__amount-inputs">
               {[1, 5, 10, 25, 50, 100, 250].map((amount) => {
