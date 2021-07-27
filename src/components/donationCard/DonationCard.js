@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom";
 import "../donationCard/DonationCard.scss";
@@ -20,11 +20,12 @@ const DonationCard = (props) => {
   const {
     register,
     handleSubmit,
+    setValue,
     // watch,
     // formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
+    //console.log(data);
     try {
       const response = await axios.post(
         `https://donatello-development.herokuapp.com/projects/${props.id}/donations`,
@@ -35,6 +36,13 @@ const DonationCard = (props) => {
       console.error(error);
     }
   };
+
+  // const handleKeyPress = (e) => {
+  //   if (e.keyCode === 13) {
+  //     setValue("amount");
+  //   }
+  //   console.log("enter", handleKeyPress);
+  // };
 
   return ReactDom.createPortal(
     <div className="popup">
@@ -55,7 +63,6 @@ const DonationCard = (props) => {
               style={{
                 color: "white",
                 fontSize: "1.5em",
-                // marginRight: "0.5rem",
               }}
             />
           </button>
@@ -79,13 +86,22 @@ const DonationCard = (props) => {
           <h4>How much do you want to donate?</h4>
           <div className="donation-card__amount">
             <aside className="donation-card__amount-display donation-card__amount-display--white">
-              €25
+
+            <input className="show-amount" type="text" {...register("value")} />
+              {/* {setValue} */}
+
             </aside>
             <aside className="donation-card__amount-inputs">
               {[1, 5, 10, 25, 50, 100, 250].map((amount) => {
                 return (
-                  <button key={amount} className="donation-card__amount-btn">
-                    € {amount}
+                  <button
+                    key={amount}
+                    className="donation-card__amount-btn"
+                    onClick={() =>
+                      setValue("value", amount, { shouldValidate: true })
+                    }
+                  >
+                   € {amount}
                   </button>
                 );
               })}
@@ -94,7 +110,9 @@ const DonationCard = (props) => {
                   className="form__input"
                   type="number"
                   placeholder="Enter an amount"
-                  {...register("amount", { required: true })}
+                  {...register("amount")}
+
+                  // onClick={() => setValue("value", { shouldValidate: true })}
                 />
               </label>
             </aside>
@@ -103,7 +121,7 @@ const DonationCard = (props) => {
           <div className="donation-card__comment">
             <label className="form__label" htmlFor="comment">
               <textarea
-                className="form__input"
+                className="form__input--text"
                 placeholder="Leave your comment here"
                 {...register("comment", { maxLength: 255 })}
               />

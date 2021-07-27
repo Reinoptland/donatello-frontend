@@ -1,3 +1,15 @@
 // * {
 //     border: 1px solid red;
 // }
+
+@import "../../colors";
+@import "../../spacing";
+
+.wrapper-succespage {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.loader {
+  color: $darkPurple;
+}
