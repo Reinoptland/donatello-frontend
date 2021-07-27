@@ -166,3 +166,19 @@ input.form__input {
   outline: none;
   border: 2px solid $darkGrey;
 }
+
+.show-amount {
+  width: 128px;
+  height: 150px;
+  background-color: $lightPurple;
+  padding: 0 40px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+  border: none;
+  color: $white;
+  outline: none;
+
+}
