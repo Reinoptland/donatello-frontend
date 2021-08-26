@@ -14,10 +14,6 @@ import axios from "axios";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
-  const [count, setCount] = useState("0");
-  //   const createdAt = new Date(props.createdAt);
-  //   const today = new Date();
-
   const {
     register,
     handleSubmit,
@@ -27,27 +23,20 @@ const DonationCard = (props) => {
   } = useForm();
 
   const comment = watch("comment");
-  console.log("WOT:", comment);
+  const amountEuro = watch("amount");
 
   const onSubmit = async (data) => {
-    //console.log(data);
+    console.log(data);
     try {
       const response = await axios.post(
         `https://donatello-development.herokuapp.com/projects/${props.id}/donations`,
-        { donationAmount: data.amount, comment: data.comment }
+        { donationAmount: `${data.amount}.00`, comment: data.comment }
       );
       window.location.assign(response.data.payment._links.checkout.href);
     } catch (error) {
       console.error(error);
     }
   };
-
-  // const handleKeyPress = (e) => {
-  //   if (e.keyCode === 13) {
-  //     setValue("amount");
-  //   }
-  //   console.log("enter", handleKeyPress);
-  // };
 
   return ReactDom.createPortal(
     <div className="popup">
@@ -94,7 +83,7 @@ const DonationCard = (props) => {
               <input
                 className="show-amount"
                 type="text"
-                {...register("value")}
+                value={`€ ${amountEuro}`}
               />
             </aside>
             <aside className="donation-card__amount-inputs">
@@ -104,7 +93,7 @@ const DonationCard = (props) => {
                     key={amount}
                     className="donation-card__amount-btn"
                     onClick={() =>
-                      setValue("value", amount, { shouldValidate: true })
+                      setValue("amount", amount, { shouldValidate: true })
                     }
                   >
                     € {amount}
@@ -117,8 +106,6 @@ const DonationCard = (props) => {
                   type="number"
                   placeholder="Enter an amount"
                   {...register("amount")}
-
-                  // onClick={() => setValue("value", { shouldValidate: true })}
                 />
               </label>
             </aside>
