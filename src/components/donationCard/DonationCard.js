@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import ReactDom from "react-dom";
 import "../donationCard/DonationCard.scss";
@@ -14,7 +14,7 @@ import axios from "axios";
 //import { formatDistance } from "date-fns";
 
 const DonationCard = (props) => {
-  const [count, setCount] = useState('0')
+  const [count, setCount] = useState("0");
   //   const createdAt = new Date(props.createdAt);
   //   const today = new Date();
 
@@ -22,9 +22,13 @@ const DonationCard = (props) => {
     register,
     handleSubmit,
     setValue,
-    // watch,
+    watch,
     // formState: { errors },
   } = useForm();
+
+  const comment = watch("comment");
+  console.log("WOT:", comment);
+
   const onSubmit = async (data) => {
     //console.log(data);
     try {
@@ -87,8 +91,11 @@ const DonationCard = (props) => {
           <h4>How much do you want to donate?</h4>
           <div className="donation-card__amount">
             <aside className="donation-card__amount-display donation-card__amount-display--white">
-                <input className="show-amount" type="text" {...register("value")} />
-
+              <input
+                className="show-amount"
+                type="text"
+                {...register("value")}
+              />
             </aside>
             <aside className="donation-card__amount-inputs">
               {[1, 5, 10, 25, 50, 100, 250].map((amount) => {
@@ -123,10 +130,14 @@ const DonationCard = (props) => {
                 className="form__input--text"
                 placeholder="Leave your comment here"
                 {...register("comment", { maxLength: 255 })}
-                  onChange={e => setCount(e.target.value.length)                  }
               />
             </label>
-            <p className="donation-card__charleft">{count}/225</p>
+            <p className="donation-card__charleft">
+              <span style={{ color: comment?.length > 255 ? "red" : "black" }}>
+                {comment?.length || 0}
+              </span>
+              /255
+            </p>
           </div>
           <div className="donation-card__btn">
             <Button
